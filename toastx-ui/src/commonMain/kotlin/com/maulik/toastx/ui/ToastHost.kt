@@ -22,8 +22,12 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -92,7 +96,25 @@ fun ToastHost(
         Box(modifier.fillMaxSize()) {
             content()
             val toast by ToastManager.toast.collectAsState()
-            val align = toast?.position ?: position
+            /**
+             * When [toast] becomes null, [AnimatedContent] still runs the exit transition. If we fall back
+             * to [position] (often [ToastPosition.TopCenter]) immediately, the slot re-aligns to the top
+             * while the toast is exiting — it looks like a quick bottom-then-top flicker.
+             */
+            var lastSlotPosition by remember(position) { mutableStateOf(position) }
+            LaunchedEffect(toast) {
+                val cfg = toast
+                if (cfg != null) {
+                    lastSlotPosition = cfg.position ?: position
+                }
+            }
+            val currentToast = toast
+            val align =
+                if (currentToast != null) {
+                    currentToast.position ?: position
+                } else {
+                    lastSlotPosition
+                }
             val overlayPadding =
                 if (toast?.style == ToastStyle.BottomSheet && align.name.startsWith("Bottom")) {
                     PaddingValues(start = 20.dp, top = 20.dp, end = 20.dp, bottom = 0.dp)
