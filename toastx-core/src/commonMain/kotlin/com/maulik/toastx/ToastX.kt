@@ -5,7 +5,7 @@ object ToastX {
         message: String? = null,
         title: String? = null,
         type: ToastType = ToastType.Info,
-        style: ToastStyle = ToastStyle.Elevated,
+        style: ToastStyle = ToastStyle.Gradient,
         showClose: Boolean = false,
         position: ToastPosition? = null,
         fullWidth: Boolean? = null,
@@ -34,7 +34,7 @@ object ToastX {
     fun success(
         message: String? = null,
         title: String? = null,
-        style: ToastStyle = ToastStyle.Elevated,
+        style: ToastStyle = ToastStyle.Gradient,
         showClose: Boolean = false,
         position: ToastPosition? = null,
         fullWidth: Boolean? = null,
@@ -63,7 +63,7 @@ object ToastX {
     fun error(
         message: String? = null,
         title: String? = null,
-        style: ToastStyle = ToastStyle.Elevated,
+        style: ToastStyle = ToastStyle.Gradient,
         showClose: Boolean = false,
         position: ToastPosition? = null,
         fullWidth: Boolean? = null,
@@ -92,7 +92,7 @@ object ToastX {
     fun warning(
         message: String? = null,
         title: String? = null,
-        style: ToastStyle = ToastStyle.Elevated,
+        style: ToastStyle = ToastStyle.Gradient,
         showClose: Boolean = false,
         position: ToastPosition? = null,
         fullWidth: Boolean? = null,
@@ -121,7 +121,7 @@ object ToastX {
     fun info(
         message: String? = null,
         title: String? = null,
-        style: ToastStyle = ToastStyle.Elevated,
+        style: ToastStyle = ToastStyle.Gradient,
         showClose: Boolean = false,
         position: ToastPosition? = null,
         fullWidth: Boolean? = null,
