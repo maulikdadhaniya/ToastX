@@ -41,13 +41,13 @@ Convenience APIs: `ToastX.success`, `ToastX.error`, `ToastX.warning`, `ToastX.in
 
 ToastX is published to **Maven Central** as a single Kotlin Multiplatform artifact.
 
-| | |
-|--|--|
-| **Group** | `io.github.maulikdadhaniya` |
-| **Artifact** | `toastx` |
-| **Version** | `1.0.0` (see [Releases](https://github.com/maulikdadhaniya/ToastX/releases) or Central for newer versions) |
+| |                                                                                                            |
+|--|------------------------------------------------------------------------------------------------------------|
+| **Group** | `io.github.maulikdadhaniya`                                                                                |
+| **Artifact** | `toastx`                                                                                                   |
+| **Version** | `1.0.1` (see [Releases](https://github.com/maulikdadhaniya/ToastX/releases) or Central for newer versions) |
 
-Maven coordinate string: **`io.github.maulikdadhaniya:toastx:1.0.0`**
+Maven coordinate string: **`io.github.maulikdadhaniya:toastx:1.0.1`**
 
 Ensure **`mavenCentral()`** is in your `dependencyResolutionManagement` / `repositories` block.
 
@@ -59,7 +59,7 @@ Ensure **`mavenCentral()`** is in your `dependencyResolutionManagement` / `repos
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.maulikdadhaniya:toastx:1.0.0")
+            implementation("io.github.maulikdadhaniya:toastx:1.0.1")
         }
     }
 }
