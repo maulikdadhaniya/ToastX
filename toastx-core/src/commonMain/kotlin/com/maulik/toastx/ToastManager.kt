@@ -63,10 +63,10 @@ object ToastManager {
             }
         _toast.value = withId
 
-        if (withId.autoDismiss && withId.durationMs > 0L) {
+        if (withId.autoDismiss && withId.durationSec > 0) {
             dismissJob =
                 scope.launch {
-                    delay(withId.durationMs)
+                    delay(withId.durationSec * 1000L)
                     dismiss()
                 }
         }

@@ -64,11 +64,11 @@ private fun lottieUsesExpressions(type: ToastType): Boolean =
         else -> true
     }
 
-private fun toastDurationMs(type: ToastType): Long =
+private fun toastDurationSec(type: ToastType): Int =
     when (type) {
-        ToastType.Error -> 4_000L
-        ToastType.Warning -> 3_500L
-        else -> 3_000L
+        ToastType.Error -> 4
+        ToastType.Warning -> 4
+        else -> 3
     }
 
 @Composable
@@ -140,7 +140,7 @@ private fun LoginScreen() {
                 showClose = false,
                 iconContent = lottieIcon,
                 position = ToastPosition.BottomCenter,
-                durationMs = toastDurationMs(type),
+                durationSec = toastDurationSec(type),
             ),
         )
     }

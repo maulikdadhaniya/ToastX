@@ -25,7 +25,7 @@ Toasts are categorized by **`ToastType`**, which drives colors, icon treatment, 
 | **`Warning`** | Risky actions, deprecations, recoverable issues |
 | **`Info`** | Neutral tips, background status, non-blocking notices |
 
-Convenience APIs: `ToastX.success`, `ToastX.error`, `ToastX.warning`, `ToastX.info`, plus `ToastX.show(..., type = …)` and `ToastX.custom(ToastConfig(…))` for full control (custom icons, actions, duration, position).
+Convenience APIs: `ToastX.success`, `ToastX.error`, `ToastX.warning`, `ToastX.info`, plus `ToastX.show(..., type = …)` and `ToastX.custom(ToastConfig(…))` for full control (custom icons, actions, **`durationSec`** in whole seconds, position).
 
 ## Visual styles (9+)
 
@@ -139,7 +139,7 @@ ToastX.show(
     style = ToastStyle.Glass,
     position = ToastPosition.BottomCenter,
     showClose = true,
-    durationMs = 4_000L,
+    durationSec = 4,
 )
 ```
 

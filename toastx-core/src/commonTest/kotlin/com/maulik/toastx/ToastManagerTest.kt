@@ -86,7 +86,7 @@ class ToastManagerTest {
             ToastManager.show(
                 ToastConfig(
                     message = "tick",
-                    durationMs = 1_000L,
+                    durationSec = 1,
                     autoDismiss = true,
                 ),
             )
@@ -107,19 +107,19 @@ class ToastManagerTest {
             ToastManager.show(
                 ToastConfig(
                     message = "a",
-                    durationMs = 10_000L,
+                    durationSec = 10,
                     autoDismiss = true,
                 ),
             )
             ToastManager.show(
                 ToastConfig(
                     message = "b",
-                    durationMs = 500L,
+                    durationSec = 1,
                     autoDismiss = true,
                 ),
             )
 
-            advanceTimeBy(500L)
+            advanceTimeBy(1_000L)
             advanceUntilIdle()
 
             assertEquals(null, ToastManager.toast.value)

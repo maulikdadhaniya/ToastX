@@ -12,7 +12,8 @@ data class ToastConfig(
     val style: ToastStyle = ToastStyle.Elevated,
     val showIcon: Boolean = true,
     val showClose: Boolean = false,
-    val durationMs: Long = 3_000L,
+    /** Visible time before auto-dismiss. Whole seconds only; `0` disables the timer (no auto-dismiss). */
+    val durationSec: Int = 3,
     val autoDismiss: Boolean = true,
     /** Overrides [ToastHost] alignment for this toast only. */
     val position: ToastPosition? = null,
