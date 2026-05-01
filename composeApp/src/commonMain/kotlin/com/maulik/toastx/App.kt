@@ -135,11 +135,9 @@ private fun LoginScreen() {
                 title = title,
                 message = message,
                 type = type,
-                style = ToastStyle.Elevated,
                 showIcon = true,
                 showClose = false,
                 iconContent = lottieIcon,
-                position = ToastPosition.BottomCenter,
                 durationSec = toastDurationSec(type),
             ),
         )

@@ -18,7 +18,7 @@ import com.maulik.toastx.theme.toastTheme
 @Composable
 fun ToastRenderer(
     config: ToastConfig,
-    hostPosition: ToastPosition = ToastPosition.TopCenter,
+    hostPosition: ToastPosition = ToastPosition.BottomCenter,
     modifier: Modifier = Modifier,
     swipeToDismiss: Boolean = true,
     maxWidth: Dp = 440.dp,

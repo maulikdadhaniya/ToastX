@@ -9,7 +9,7 @@ data class ToastConfig(
     /** Optional body. Use with [title], or alone if [title] is null (at least one should be non-blank). */
     val message: String? = null,
     val type: ToastType = ToastType.Info,
-    val style: ToastStyle = ToastStyle.Elevated,
+    val style: ToastStyle = ToastStyle.Gradient,
     val showIcon: Boolean = true,
     val showClose: Boolean = false,
     /** Visible time before auto-dismiss. Whole seconds only; `0` disables the timer (no auto-dismiss). */

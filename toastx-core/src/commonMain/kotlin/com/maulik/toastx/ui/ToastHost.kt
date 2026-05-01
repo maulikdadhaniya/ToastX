@@ -79,7 +79,7 @@ fun ToastHost(
     lightTheme: ToastTheme = ToastThemeDefaults.light,
     darkTheme: ToastTheme = ToastThemeDefaults.dark,
     useDarkTheme: Boolean = isSystemInDarkTheme(),
-    position: ToastPosition = ToastPosition.TopCenter,
+    position: ToastPosition = ToastPosition.BottomCenter,
     defaultEnterAnimation: ToastEnterAnimation = ToastEnterAnimation.FromBottom,
     contentPadding: PaddingValues = PaddingValues(horizontal = 20.dp, vertical = 20.dp),
     swipeToDismiss: Boolean = true,
