@@ -39,11 +39,11 @@ Convenience APIs: `ToastX.success`, `ToastX.error`, `ToastX.warning`, `ToastX.in
 
 ## Install
 
-Artifacts on Maven Central are not wired in this repository yet. Use the **multiplatform modules** from a checkout of this project (or your own fork).
+Artifacts on Maven Central are not wired in this repository yet. When published, the coordinate is **`io.github.maulikdadhaniya:toastx`** (single artifact). Until then, use the **library module** from a checkout of this project (or your own fork).
 
-### 1. Include the modules
+### 1. Include the library
 
-Point Gradle at `toastx-core` and `toastx-ui` (UI depends on core). Example when **ToastX** lives next to your app folder:
+The published artifact is one module (**`:toastxLib`**, sources under `toastx-core/`). Example when **ToastX** lives next to your app folder:
 
 **`settings.gradle.kts`**
 
@@ -51,16 +51,14 @@ Point Gradle at `toastx-core` and `toastx-ui` (UI depends on core). Example when
 rootProject.name = "MyApp"
 
 include(":app")
-include(":toastxCore")
-include(":toastxUi")
+include(":toastxLib")
 
-project(":toastxCore").projectDir = file("../ToastX/toastx-core")
-project(":toastxUi").projectDir = file("../ToastX/toastx-ui")
+project(":toastxLib").projectDir = file("../ToastX/toastx-core")
 ```
 
-Adjust the relative paths if your clone lives elsewhere. You can instead use a **Git submodule** or copy the `toastx-core` and `toastx-ui` directories into your workspace and set `projectDir` accordingly.
+Adjust the relative path if your clone lives elsewhere. You can use a **Git submodule** or copy the `toastx-core` directory into your workspace and set `projectDir` accordingly.
 
-### 2. Depend on the UI module
+### 2. Depend on ToastX
 
 **`build.gradle.kts` (Kotlin Multiplatform target, e.g. `commonMain`)**
 
@@ -68,13 +66,13 @@ Adjust the relative paths if your clone lives elsewhere. You can instead use a *
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":toastxUi"))
+            implementation(project(":toastxLib"))
         }
     }
 }
 ```
 
-`toastxUi` exposes **`toastxCore`** as `api`, so you get `ToastX`, `ToastConfig`, and types without a second dependency.
+One dependency includes **`ToastX`**, **`ToastHost`**, **`ToastConfig`**, and all UI internals.
 
 ### 3. Match Compose compiler and Material 3
 
@@ -159,7 +157,7 @@ ToastX.custom(
 )
 ```
 
-Swipe-to-dismiss and safe-area padding are handled inside **`ToastHost`** (see [`ToastRenderer`](toastx-ui/src/commonMain/kotlin/com/maulik/toastx/ui/ToastRenderer.kt)).
+Swipe-to-dismiss and safe-area padding are handled inside **`ToastHost`** (see [`ToastRenderer`](toastx-core/src/commonMain/kotlin/com/maulik/toastx/ui/ToastRenderer.kt)).
 
 ## Sample app
 

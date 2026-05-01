@@ -22,7 +22,7 @@ kotlin {
         iosSimulatorArm64(),
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "ToastXCore"
+            baseName = "ToastX"
             isStatic = true
         }
     }
@@ -40,12 +40,15 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(compose.runtime)
             implementation(compose.foundation)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(libs.kotlinx.coroutines.core)
         }
         androidMain.dependencies {
             implementation(libs.kotlinx.coroutines.android)
+            implementation(libs.compose.uiToolingPreview)
         }
         jvmMain.dependencies {
             implementation(libs.kotlinx.coroutinesSwing)
@@ -58,7 +61,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.maulik.toastx.core"
+    namespace = "com.maulik.toastx"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()

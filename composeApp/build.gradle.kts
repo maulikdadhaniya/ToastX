@@ -46,7 +46,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
-            implementation(project(":toastxUi"))
+            implementation(project(":toastxLib"))
             implementation(libs.compottie)
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)

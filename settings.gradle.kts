@@ -33,7 +33,6 @@ plugins {
 }
 
 include(":composeApp")
-include(":toastxCore")
-include(":toastxUi")
-project(":toastxCore").projectDir = file("toastx-core")
-project(":toastxUi").projectDir = file("toastx-ui")
+// Name avoids TYPESAFE_PROJECT_ACCESSORS clash with rootProject "ToastX" (:toastx → broken Java accessor).
+include(":toastxLib")
+project(":toastxLib").projectDir = file("toastx-core")
