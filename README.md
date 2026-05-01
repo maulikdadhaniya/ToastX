@@ -39,28 +39,51 @@ Convenience APIs: `ToastX.success`, `ToastX.error`, `ToastX.warning`, `ToastX.in
 
 ## Install
 
-Artifacts on Maven Central are not wired in this repository yet. When published, the coordinate is **`io.github.maulikdadhaniya:toastx`** (single artifact). Until then, use the **library module** from a checkout of this project (or your own fork).
+ToastX is published to **Maven Central** as a single Kotlin Multiplatform artifact.
 
-### 1. Include the library
+| | |
+|--|--|
+| **Group** | `io.github.maulikdadhaniya` |
+| **Artifact** | `toastx` |
+| **Version** | `1.0.0` (see [Releases](https://github.com/maulikdadhaniya/ToastX/releases) or Central for newer versions) |
 
-The published artifact is one module (**`:toastxLib`**, sources under `toastx-core/`). Example when **ToastX** lives next to your app folder:
+Maven coordinate string: **`io.github.maulikdadhaniya:toastx:1.0.0`**
+
+Ensure **`mavenCentral()`** is in your `dependencyResolutionManagement` / `repositories` block.
+
+### Gradle (Kotlin Multiplatform)
+
+**`build.gradle.kts`**
+
+```kotlin
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            implementation("io.github.maulikdadhaniya:toastx:1.0.0")
+        }
+    }
+}
+```
+
+One dependency includes **`ToastX`**, **`ToastHost`**, **`ToastConfig`**, and all UI internals.
+
+### Match Compose compiler and Material 3
+
+Use a **Compose Multiplatform** and **Compose compiler** setup compatible with your Kotlin version (same idea as this repo’s [`composeApp/build.gradle.kts`](composeApp/build.gradle.kts) and [`gradle/libs.versions.toml`](gradle/libs.versions.toml)).
+
+### From source (optional)
+
+To depend on a **local checkout** instead of Central, include the library module (**`:toastxLib`**, folder `toastx-core/`):
 
 **`settings.gradle.kts`**
 
 ```kotlin
-rootProject.name = "MyApp"
-
 include(":app")
 include(":toastxLib")
-
 project(":toastxLib").projectDir = file("../ToastX/toastx-core")
 ```
 
-Adjust the relative path if your clone lives elsewhere. You can use a **Git submodule** or copy the `toastx-core` directory into your workspace and set `projectDir` accordingly.
-
-### 2. Depend on ToastX
-
-**`build.gradle.kts` (Kotlin Multiplatform target, e.g. `commonMain`)**
+**`build.gradle.kts`**
 
 ```kotlin
 kotlin {
@@ -71,12 +94,6 @@ kotlin {
     }
 }
 ```
-
-One dependency includes **`ToastX`**, **`ToastHost`**, **`ToastConfig`**, and all UI internals.
-
-### 3. Match Compose compiler and Material 3
-
-Use a **Compose Multiplatform** and **Compose compiler** setup compatible with your Kotlin version (same pattern as this repo’s [`composeApp/build.gradle.kts`](composeApp/build.gradle.kts)).
 
 ## Usage
 
