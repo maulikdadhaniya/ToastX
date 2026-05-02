@@ -12,10 +12,6 @@
 
 **ToastX** shows Material-style toasts from shared Kotlin code. You add **one** `ToastHost` at the root, then call **`ToastX`** from anywhere under it.
 
-<p align="center">
-  <img src="docs/ToastX_Demo.png" alt="ToastX demo" width="800" />
-</p>
-
 ## What you need
 
 - A **Kotlin Multiplatform** module with **Compose Multiplatform** (and the **Compose compiler** plugin for your Kotlin version).
@@ -173,26 +169,48 @@ ToastX.custom(
 )
 ```
 
-## Types and looks (short)
+## Types and looks
 
-- **`ToastType`**: `Success`, `Error`, `Warning`, `Info` — drives color and default icon.
-- **`ToastStyle`**: `Soft`, `Minimal`, `Outline`, `Elevated`, `OuterShadow`, `BottomSheet`, `Gradient`, `AnimatedBorder`, `Glass` — changes the card layout.
+### `ToastType` (4)
 
-## API docs (Dokka) and Git
+| Type | Constant | Icon & treatment | Typical use |
+|------|----------|------------------|---------------|
+| **Success** | `ToastType.Success` | Green family, circular **checkmark** | Completed actions, saved state, confirmations |
+| **Error** | `ToastType.Error` | Red / pink family, circular **✕** | Failures, validation errors, blocked work |
+| **Warning** | `ToastType.Warning` | Amber / yellow family, **triangle + !** | Risky actions, deprecations, recoverable issues |
+| **Info** | `ToastType.Info` | Blue family, circular **lowercase “i”** | Tips, neutral status, non-blocking notices |
 
-HTML is generated into **`docs/api/`** (not under `build/`, so Git can track it).
+Pass the type on **`ToastX.show(..., type = …)`** or inside **`ToastConfig`** for **`ToastX.custom`**. It drives **colors**, **default left icon**, and **default timing** unless you override.
+
+### `ToastStyle` (9)
+
+| Style | Constant | What it looks like |
+|-------|----------|--------------------|
+| **Soft** | `ToastStyle.Soft` | Soft card: pale fill, circular icon, title + message |
+| **Minimal** | `ToastStyle.Minimal` | Compact card, thin accent border |
+| **Outline** | `ToastStyle.Outline` | Strong outline, circular icon, two-line emphasis |
+| **Elevated** | `ToastStyle.Elevated` | White card, rounded square icon tile, colored shadow |
+| **Outer shadow** | `ToastStyle.OuterShadow` | White card with stronger neutral outer shadow |
+| **Bottom sheet** | `ToastStyle.BottomSheet` | Bottom-sheet shape: rounded top, flat bottom when used full-width at bottom |
+| **Gradient** | `ToastStyle.Gradient` | Rich **gradient** fill following the toast type color |
+| **Animated border** | `ToastStyle.AnimatedBorder` | Dark card with a **thin colored border** (animated gradient) around the body |
+| **Glass** | `ToastStyle.Glass` | Frosted **glass** bar; optional pill-style action |
+
+Set **`style = ToastStyle.…`** on **`ToastX.show`** or in **`ToastConfig`**.
+
+### API reference (Dokka)
+
+Full KDoc for every class and parameter:
+
+**[https://maulikdadhaniya.github.io/ToastX/api/](https://maulikdadhaniya.github.io/ToastX/api/)**
+
+That URL works after you turn on **GitHub Pages** for this repo (**Settings → Pages → Build from branch `main` → folder `/docs`**). The HTML is generated into **`docs/api/`** by:
 
 ```shell
 ./gradlew :toastxLib:dokkaGenerate
-git add docs/api
-git status   # review changed files
-git commit -m "Update API documentation (Dokka)"
-git push
 ```
 
-**Tip:** Regenerate after API changes so **`docs/api`** stays in sync. If you use **GitHub Pages**, point the site root at **`docs/api`** (or move/copy `docs/api` into your Pages branch the way your workflow expects).
-
-Browse locally: open **`docs/api/index.html`** in a browser.
+Then commit and push **`docs/api`** so the site updates. Until Pages is enabled, open **`docs/api/index.html`** locally in a browser after running the command above.
 
 ## Sample in this repo
 
