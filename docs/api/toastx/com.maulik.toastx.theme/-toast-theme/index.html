@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ToastTheme</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    toastx
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.2        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":toastxLib/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":toastxLib/commonMain"
+                                       data-filter=":toastxLib/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    toastx
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="toastx::com.maulik.toastx.theme/ToastTheme///PointingToDeclaration//1854401485">
+  <div class="breadcrumbs"><a href="../../../index.html">toastx</a><span class="delimiter">/</span><a href="../index.html">com.maulik.toastx.theme</a><span class="delimiter">/</span><span class="current">ToastTheme</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Toast</span><wbr></wbr><span><span>Theme</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">ToastTheme</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>successAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF2E7D32)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>successBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFA5D6A7)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>successBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE8F5E9)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>successShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF81C784)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>errorAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFC62828)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>errorBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFEF9A9A)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>errorBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFEBEE)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>errorShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE57373)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>warningAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE65100)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>warningBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFB74D)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>warningBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFF8E1)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>warningShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFB74D)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>infoAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF1565C0)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>infoBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF90CAF9)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>infoBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE3F2FD)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>infoShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF64B5F6)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>glassHostBlue<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF2B59A2)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>glassFill<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFF2F4F7)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>glassBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0x29000000)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>glassActionFill<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0x14000000)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onGlass<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF1A1D21)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onDark<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onToastTitle<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF1A1A1A)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>outlineMessage<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF616161)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>typography<span class="token operator">: </span><a href="../-toast-typography/index.html">ToastTypography</a><span class="token operator"> = </span>ToastTypography.Default<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gradientContentTitle<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gradientContentMessage<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White.copy(alpha = 0.92f)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gradientIconScrim<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White.copy(alpha = 0.24f)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gradientCloseTint<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White.copy(alpha = 0.86f)<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gradientIconForeground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White</span></span><span class="token punctuation">)</span></div><p class="paragraph">Default colors tuned to the ToastX reference mocks (soft pastels, tinted shadows, glass on deep blue).</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button><button class="section-tab" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION,EXTENSION_PROPERTY,EXTENSION_FUNCTION">Members &amp; Extensions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-1222627959%2FConstructors%2F1854401485" anchor-label="ToastTheme" id="-1222627959%2FConstructors%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-toast-theme.html"><span>Toast</span><wbr></wbr><span><span>Theme</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1222627959%2FConstructors%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">successAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF2E7D32)<span class="token punctuation">, </span></span><span class="parameter ">successBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFA5D6A7)<span class="token punctuation">, </span></span><span class="parameter ">successBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE8F5E9)<span class="token punctuation">, </span></span><span class="parameter ">successShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF81C784)<span class="token punctuation">, </span></span><span class="parameter ">errorAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFC62828)<span class="token punctuation">, </span></span><span class="parameter ">errorBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFEF9A9A)<span class="token punctuation">, </span></span><span class="parameter ">errorBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFEBEE)<span class="token punctuation">, </span></span><span class="parameter ">errorShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE57373)<span class="token punctuation">, </span></span><span class="parameter ">warningAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE65100)<span class="token punctuation">, </span></span><span class="parameter ">warningBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFB74D)<span class="token punctuation">, </span></span><span class="parameter ">warningBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFF8E1)<span class="token punctuation">, </span></span><span class="parameter ">warningShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFFFB74D)<span class="token punctuation">, </span></span><span class="parameter ">infoAccent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF1565C0)<span class="token punctuation">, </span></span><span class="parameter ">infoBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF90CAF9)<span class="token punctuation">, </span></span><span class="parameter ">infoBackground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFE3F2FD)<span class="token punctuation">, </span></span><span class="parameter ">infoShadow<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF64B5F6)<span class="token punctuation">, </span></span><span class="parameter ">glassHostBlue<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF2B59A2)<span class="token punctuation">, </span></span><span class="parameter ">glassFill<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFFF2F4F7)<span class="token punctuation">, </span></span><span class="parameter ">glassBorder<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0x29000000)<span class="token punctuation">, </span></span><span class="parameter ">glassActionFill<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0x14000000)<span class="token punctuation">, </span></span><span class="parameter ">onGlass<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF1A1D21)<span class="token punctuation">, </span></span><span class="parameter ">onDark<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White<span class="token punctuation">, </span></span><span class="parameter ">onToastTitle<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF1A1A1A)<span class="token punctuation">, </span></span><span class="parameter ">outlineMessage<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color(0xFF616161)<span class="token punctuation">, </span></span><span class="parameter ">typography<span class="token operator">: </span><a href="../-toast-typography/index.html">ToastTypography</a><span class="token operator"> = </span>ToastTypography.Default<span class="token punctuation">, </span></span><span class="parameter ">gradientContentTitle<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White<span class="token punctuation">, </span></span><span class="parameter ">gradientContentMessage<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White.copy(alpha = 0.92f)<span class="token punctuation">, </span></span><span class="parameter ">gradientIconScrim<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White.copy(alpha = 0.24f)<span class="token punctuation">, </span></span><span class="parameter ">gradientCloseTint<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White.copy(alpha = 0.86f)<span class="token punctuation">, </span></span><span class="parameter ">gradientIconForeground<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a><span class="token operator"> = </span>Color.White</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="-647811959%2FProperties%2F1854401485" anchor-label="errorAccent" id="-647811959%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="error-accent.html"><span>error</span><wbr></wbr><span><span>Accent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-647811959%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="error-accent.html">errorAccent</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2138838619%2FProperties%2F1854401485" anchor-label="errorBackground" id="-2138838619%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="error-background.html"><span>error</span><wbr></wbr><span><span>Background</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2138838619%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="error-background.html">errorBackground</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1773477735%2FProperties%2F1854401485" anchor-label="errorBorder" id="1773477735%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="error-border.html"><span>error</span><wbr></wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1773477735%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="error-border.html">errorBorder</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1351406835%2FProperties%2F1854401485" anchor-label="errorShadow" id="1351406835%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="error-shadow.html"><span>error</span><wbr></wbr><span><span>Shadow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1351406835%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="error-shadow.html">errorShadow</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2090466918%2FProperties%2F1854401485" anchor-label="glassActionFill" id="2090466918%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="glass-action-fill.html"><span>glass</span><wbr></wbr><span>Action</span><wbr></wbr><span><span>Fill</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2090466918%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="glass-action-fill.html">glassActionFill</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1502755699%2FProperties%2F1854401485" anchor-label="glassBorder" id="1502755699%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="glass-border.html"><span>glass</span><wbr></wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1502755699%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="glass-border.html">glassBorder</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-14792068%2FProperties%2F1854401485" anchor-label="glassFill" id="-14792068%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="glass-fill.html"><span>glass</span><wbr></wbr><span><span>Fill</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-14792068%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="glass-fill.html">glassFill</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div><div class="brief "><p class="paragraph">Light-theme glass: reads on white/light app surfaces (opaque frost + dark ink).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="168106429%2FProperties%2F1854401485" anchor-label="glassHostBlue" id="168106429%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="glass-host-blue.html"><span>glass</span><wbr></wbr><span>Host</span><wbr></wbr><span><span>Blue</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="168106429%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="glass-host-blue.html">glassHostBlue</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1161799592%2FProperties%2F1854401485" anchor-label="gradientCloseTint" id="-1161799592%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="gradient-close-tint.html"><span>gradient</span><wbr></wbr><span>Close</span><wbr></wbr><span><span>Tint</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1161799592%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="gradient-close-tint.html">gradientCloseTint</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-889918303%2FProperties%2F1854401485" anchor-label="gradientContentMessage" id="-889918303%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="gradient-content-message.html"><span>gradient</span><wbr></wbr><span>Content</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-889918303%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="gradient-content-message.html">gradientContentMessage</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-274424272%2FProperties%2F1854401485" anchor-label="gradientContentTitle" id="-274424272%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="gradient-content-title.html"><span>gradient</span><wbr></wbr><span>Content</span><wbr></wbr><span><span>Title</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-274424272%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="gradient-content-title.html">gradientContentTitle</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div><div class="brief "><p class="paragraph">Text on ToastStyle.Gradient fills (high chroma); separate from <span data-unresolved-link="com.maulik.toastx.theme/ToastTheme//#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#com.maulik.toastx.theme.ToastTypography#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color#androidx.compose.ui.graphics.Color/PointingToCallableParameters(22)/">onToastTitle</span> for contrast.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1063847149%2FProperties%2F1854401485" anchor-label="gradientIconForeground" id="-1063847149%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="gradient-icon-foreground.html"><span>gradient</span><wbr></wbr><span>Icon</span><wbr></wbr><span><span>Foreground</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1063847149%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="gradient-icon-foreground.html">gradientIconForeground</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div><div class="brief "><p class="paragraph">Icon tint on gradient when using default glyphs.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-4561186%2FProperties%2F1854401485" anchor-label="gradientIconScrim" id="-4561186%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="gradient-icon-scrim.html"><span>gradient</span><wbr></wbr><span>Icon</span><wbr></wbr><span><span>Scrim</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-4561186%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="gradient-icon-scrim.html">gradientIconScrim</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1016456601%2FProperties%2F1854401485" anchor-label="infoAccent" id="-1016456601%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="info-accent.html"><span>info</span><wbr></wbr><span><span>Accent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1016456601%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="info-accent.html">infoAccent</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="260356227%2FProperties%2F1854401485" anchor-label="infoBackground" id="260356227%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="info-background.html"><span>info</span><wbr></wbr><span><span>Background</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="260356227%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="info-background.html">infoBackground</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1404833093%2FProperties%2F1854401485" anchor-label="infoBorder" id="1404833093%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="info-border.html"><span>info</span><wbr></wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1404833093%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="info-border.html">infoBorder</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="982762193%2FProperties%2F1854401485" anchor-label="infoShadow" id="982762193%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="info-shadow.html"><span>info</span><wbr></wbr><span><span>Shadow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="982762193%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="info-shadow.html">infoShadow</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2126958806%2FProperties%2F1854401485" anchor-label="onDark" id="-2126958806%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-dark.html"><span>on</span><wbr></wbr><span><span>Dark</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2126958806%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="on-dark.html">onDark</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1738294786%2FProperties%2F1854401485" anchor-label="onGlass" id="-1738294786%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-glass.html"><span>on</span><wbr></wbr><span><span>Glass</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1738294786%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="on-glass.html">onGlass</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1816961969%2FProperties%2F1854401485" anchor-label="onToastTitle" id="-1816961969%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-toast-title.html"><span>on</span><wbr></wbr><span>Toast</span><wbr></wbr><span><span>Title</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1816961969%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="on-toast-title.html">onToastTitle</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div><div class="brief "><p class="paragraph">Title on standard toast surfaces (elevated / outer shadow, soft, etc.).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="223269818%2FProperties%2F1854401485" anchor-label="outlineMessage" id="223269818%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="outline-message.html"><span>outline</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="223269818%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="outline-message.html">outlineMessage</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-651602002%2FProperties%2F1854401485" anchor-label="successAccent" id="-651602002%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="success-accent.html"><span>success</span><wbr></wbr><span><span>Accent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-651602002%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="success-accent.html">successAccent</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1924793782%2FProperties%2F1854401485" anchor-label="successBackground" id="-1924793782%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="success-background.html"><span>success</span><wbr></wbr><span><span>Background</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1924793782%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="success-background.html">successBackground</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1769687692%2FProperties%2F1854401485" anchor-label="successBorder" id="1769687692%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="success-border.html"><span>success</span><wbr></wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1769687692%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="success-border.html">successBorder</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1347616792%2FProperties%2F1854401485" anchor-label="successShadow" id="1347616792%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="success-shadow.html"><span>success</span><wbr></wbr><span><span>Shadow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1347616792%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="success-shadow.html">successShadow</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1780176848%2FProperties%2F1854401485" anchor-label="typography" id="-1780176848%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="typography.html"><span><span>typography</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1780176848%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="typography.html">typography</a><span class="token operator">: </span><a href="../-toast-typography/index.html">ToastTypography</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="761345269%2FProperties%2F1854401485" anchor-label="warningAccent" id="761345269%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="warning-accent.html"><span>warning</span><wbr></wbr><span><span>Accent</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="761345269%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="warning-accent.html">warningAccent</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="472898577%2FProperties%2F1854401485" anchor-label="warningBackground" id="472898577%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="warning-background.html"><span>warning</span><wbr></wbr><span><span>Background</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="472898577%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="warning-background.html">warningBackground</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1112332333%2FProperties%2F1854401485" anchor-label="warningBorder" id="-1112332333%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="warning-border.html"><span>warning</span><wbr></wbr><span><span>Border</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1112332333%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="warning-border.html">warningBorder</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1534403233%2FProperties%2F1854401485" anchor-label="warningShadow" id="-1534403233%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="warning-shadow.html"><span>warning</span><wbr></wbr><span><span>Shadow</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1534403233%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="warning-shadow.html">warningShadow</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1021942834%2FFunctions%2F1854401485" anchor-label="withColor" id="1021942834%2FFunctions%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../with-color.html"><span>with</span><wbr></wbr><span><span>Color</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1021942834%2FFunctions%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">fun </span><a href="index.html">ToastTheme</a><span class="token punctuation">.</span><a href="../with-color.html"><span class="token function">withColor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">role<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/text/TextStyle.html">TextStyle</a><span class="token punctuation">, </span></span><span class="parameter ">color<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Color.html">Color</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/androidx/compose/ui/text/TextStyle.html">TextStyle</a></div><div class="brief "><p class="paragraph">Merges <a href="../with-color.html">role</a> with <a href="../-toast-typography/default-font-family.html">ToastTypography.defaultFontFamily</a> and applies <a href="../with-color.html">color</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -80,14 +80,119 @@ ToastX.warning(title = "Heads up", message = "Check this.")
 ToastX.info(title = "Info", message = "Details here.")
 ```
 
-**3. More control** (style, duration in seconds, button, custom icon): use **`ToastX.custom(ToastConfig(…))`**. Set **`style = ToastStyle.…`**, **`durationSec`**, **`action`**, and optionally **`iconContent`** (a `@Composable (ToastType) -> Unit` for the left slot — or leave it `null` for the built-in icon).
+**3. More control** (style, duration in seconds, button, custom icon): use **`ToastX.custom(ToastConfig(…))`**. Set **`style = ToastStyle.…`**, **`durationSec`**, **`action`**, and optionally **`iconContent`** (see below).
+
+## Custom left icon (image / vector)
+
+Use **`ToastConfig.iconContent`**: a **`@Composable (ToastType) -> Unit`**. ToastX places it in the **left** icon area. Use about **`36.dp`** height/width so it lines up with every style.
+
+```kotlin
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.maulik.toastx.ToastConfig
+import com.maulik.toastx.ToastType
+import com.maulik.toastx.ToastX
+
+ToastX.custom(
+    ToastConfig(
+        title = "Uploaded",
+        message = "File is on the server.",
+        type = ToastType.Success,
+        showIcon = true,
+        iconContent = {
+            Image(
+                painter = myPainter, // any androidx.compose.ui.graphics.painter.Painter
+                contentDescription = null,
+                modifier = Modifier.size(36.dp),
+            )
+        },
+    ),
+)
+```
+
+Omit **`iconContent`** (or pass **`null`**) to keep the **built-in** type icon.
+
+## Lottie (Compottie)
+
+**1.** Add Compottie on **`commonMain`** (version can match this repo’s catalog, e.g. **2.0.3**):
+
+```kotlin
+implementation("io.github.alexzhirkevich:compottie:2.0.3")
+```
+
+**2.** Pass Lottie into **`iconContent`** (JSON as `String`, e.g. from **`Res.readBytes("files/…").decodeToString()`** or your own loader):
+
+```kotlin
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.size
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.maulik.toastx.ToastConfig
+import com.maulik.toastx.ToastType
+import com.maulik.toastx.ToastX
+import io.github.alexzhirkevich.compottie.Compottie
+import io.github.alexzhirkevich.compottie.LottieCompositionSpec
+import io.github.alexzhirkevich.compottie.rememberLottieComposition
+import io.github.alexzhirkevich.compottie.rememberLottiePainter
+
+@Composable
+fun LottieIcon(json: String, modifier: Modifier = Modifier) {
+    key(json) {
+        val result by rememberLottieComposition(json) {
+            LottieCompositionSpec.JsonString(json)
+        }
+        val composition by result
+        if (!result.isFailure && composition != null) {
+            Image(
+                painter = rememberLottiePainter(
+                    composition = composition,
+                    iterations = Compottie.IterateForever,
+                    isPlaying = true,
+                ),
+                contentDescription = null,
+                modifier = modifier.size(36.dp),
+            )
+        }
+    }
+}
+
+// Example toast
+ToastX.custom(
+    ToastConfig(
+        title = "Syncing",
+        message = "Please wait…",
+        type = ToastType.Info,
+        showIcon = true,
+        iconContent = { LottieIcon(json = myLottieJsonString) },
+    ),
+)
+```
 
 ## Types and looks (short)
 
 - **`ToastType`**: `Success`, `Error`, `Warning`, `Info` — drives color and default icon.
 - **`ToastStyle`**: `Soft`, `Minimal`, `Outline`, `Elevated`, `OuterShadow`, `BottomSheet`, `Gradient`, `AnimatedBorder`, `Glass` — changes the card layout.
 
-API reference: run `./gradlew :toastxLib:dokkaGenerate`, then open `toastx-core/build/dokka/html/index.html` in a browser.
+## API docs (Dokka) and Git
+
+HTML is generated into **`docs/api/`** (not under `build/`, so Git can track it).
+
+```shell
+./gradlew :toastxLib:dokkaGenerate
+git add docs/api
+git status   # review changed files
+git commit -m "Update API documentation (Dokka)"
+git push
+```
+
+**Tip:** Regenerate after API changes so **`docs/api`** stays in sync. If you use **GitHub Pages**, point the site root at **`docs/api`** (or move/copy `docs/api` into your Pages branch the way your workflow expects).
+
+Browse locally: open **`docs/api/index.html`** in a browser.
 
 ## Sample in this repo
 

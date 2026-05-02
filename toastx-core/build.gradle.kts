@@ -76,7 +76,8 @@ android {
 dokka {
     dokkaPublications.html {
         moduleName.set("toastx")
-        outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
+        // Under docs/ so HTML is not inside gitignored **/build/ — safe to commit for GitHub Pages / README links.
+        outputDirectory.set(rootProject.layout.projectDirectory.dir("docs/api"))
         failOnWarning.set(false)
     }
 }

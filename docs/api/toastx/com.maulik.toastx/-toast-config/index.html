@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ToastConfig</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    toastx
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+1.0.2        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector common-like" data-active="" aria-pressed="true"
+                        data-filter=":toastxLib/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":toastxLib/commonMain"
+                                       data-filter=":toastxLib/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    toastx
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="toastx::com.maulik.toastx/ToastConfig///PointingToDeclaration//1854401485">
+  <div class="breadcrumbs"><a href="../../../index.html">toastx</a><span class="delimiter">/</span><a href="../index.html">com.maulik.toastx</a><span class="delimiter">/</span><span class="current">ToastConfig</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Toast</span><wbr></wbr><span><span>Config</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">ToastConfig</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>id<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>title<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>type<span class="token operator">: </span><a href="../-toast-type/index.html">ToastType</a><span class="token operator"> = </span>ToastType.Info<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>style<span class="token operator">: </span><a href="../-toast-style/index.html">ToastStyle</a><span class="token operator"> = </span>ToastStyle.Gradient<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>showIcon<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>showClose<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>durationSec<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">3</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>autoDismiss<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>position<span class="token operator">: </span><a href="../-toast-position/index.html">ToastPosition</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>fullWidth<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>enterAnimation<span class="token operator">: </span><a href="../-toast-enter-animation/index.html">ToastEnterAnimation</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>action<span class="token operator">: </span><a href="../-toast-action/index.html">ToastAction</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>appearance<span class="token operator">: </span><a href="../-toast-appearance/index.html">ToastAppearance</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>iconContent<span class="token operator">: </span><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a> </span><span class="token punctuation">(</span><a href="../-toast-type/index.html">ToastType</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onToastClick<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>onDismiss<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="tableheader">Constructors</h2>
+        <div class="table"><a data-name="-1695968139%2FConstructors%2F1854401485" anchor-label="ToastConfig" id="-1695968139%2FConstructors%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-togglable="CONSTRUCTOR" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-toast-config.html"><span>Toast</span><wbr></wbr><span><span>Config</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1695968139%2FConstructors%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">title<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">message<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">type<span class="token operator">: </span><a href="../-toast-type/index.html">ToastType</a><span class="token operator"> = </span>ToastType.Info<span class="token punctuation">, </span></span><span class="parameter ">style<span class="token operator">: </span><a href="../-toast-style/index.html">ToastStyle</a><span class="token operator"> = </span>ToastStyle.Gradient<span class="token punctuation">, </span></span><span class="parameter ">showIcon<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">showClose<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">durationSec<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">3</span><span class="token punctuation">, </span></span><span class="parameter ">autoDismiss<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">position<span class="token operator">: </span><a href="../-toast-position/index.html">ToastPosition</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">fullWidth<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">enterAnimation<span class="token operator">: </span><a href="../-toast-enter-animation/index.html">ToastEnterAnimation</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><a href="../-toast-action/index.html">ToastAction</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">appearance<span class="token operator">: </span><a href="../-toast-appearance/index.html">ToastAppearance</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">iconContent<span class="token operator">: </span><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a> </span><span class="token punctuation">(</span><a href="../-toast-type/index.html">ToastType</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onToastClick<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">onDismiss<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="1215339095%2FProperties%2F1854401485" anchor-label="action" id="1215339095%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="action.html"><span><span>action</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1215339095%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="action.html">action</a><span class="token operator">: </span><a href="../-toast-action/index.html">ToastAction</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1239251991%2FProperties%2F1854401485" anchor-label="appearance" id="-1239251991%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="appearance.html"><span><span>appearance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1239251991%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="appearance.html">appearance</a><span class="token operator">: </span><a href="../-toast-appearance/index.html">ToastAppearance</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-852212686%2FProperties%2F1854401485" anchor-label="autoDismiss" id="-852212686%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="auto-dismiss.html"><span>auto</span><wbr></wbr><span><span>Dismiss</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-852212686%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="auto-dismiss.html">autoDismiss</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1953198544%2FProperties%2F1854401485" anchor-label="durationSec" id="-1953198544%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="duration-sec.html"><span>duration</span><wbr></wbr><span><span>Sec</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1953198544%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="duration-sec.html">durationSec</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Visible time before auto-dismiss. Whole seconds only; <code class="lang-kotlin">0</code> disables the timer (no auto-dismiss).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1447865793%2FProperties%2F1854401485" anchor-label="enterAnimation" id="1447865793%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enter-animation.html"><span>enter</span><wbr></wbr><span><span>Animation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1447865793%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="enter-animation.html">enterAnimation</a><span class="token operator">: </span><a href="../-toast-enter-animation/index.html">ToastEnterAnimation</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Overrides ToastHost default enter animation for this toast only.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="944243990%2FProperties%2F1854401485" anchor-label="fullWidth" id="944243990%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="full-width.html"><span>full</span><wbr></wbr><span><span>Width</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="944243990%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="full-width.html">fullWidth</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Layout width: <code class="lang-kotlin">null</code> = full width when <span data-unresolved-link="com.maulik.toastx/ToastConfig//#kotlin.String#kotlin.String?#kotlin.String?#com.maulik.toastx.ToastType#com.maulik.toastx.ToastStyle#kotlin.Boolean#kotlin.Boolean#kotlin.Int#kotlin.Boolean#com.maulik.toastx.ToastPosition?#kotlin.Boolean?#com.maulik.toastx.ToastEnterAnimation?#com.maulik.toastx.ToastAction?#com.maulik.toastx.ToastAppearance?#kotlin.Function1[com.maulik.toastx.ToastType,kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?/PointingToCallableParameters(9)/">position</span> (or host default) is a bottom stripe (<a href="../is-bottom-stripe.html">ToastPosition.isBottomStripe</a>), capped width at ToastHost.maxToastWidth for top positions.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1215417363%2FProperties%2F1854401485" anchor-label="iconContent" id="-1215417363%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="icon-content.html"><span>icon</span><wbr></wbr><span><span>Content</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1215417363%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="icon-content.html">iconContent</a><span class="token operator">: </span><span><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/compose/runtime/Composable.html"><span class="token annotation builtin">Composable</span></a> </span><span class="token punctuation">(</span><a href="../-toast-type/index.html">ToastType</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Optional custom icon slot. Use this for Image, animated vector, Lottie wrapper, or any composable. If null, ToastX renders built-in icons.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2134617874%2FProperties%2F1854401485" anchor-label="id" id="2134617874%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="id.html"><span><span>id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2134617874%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="id.html">id</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1962688390%2FProperties%2F1854401485" anchor-label="message" id="1962688390%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="message.html"><span><span>message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1962688390%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="message.html">message</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Optional body. Use with <span data-unresolved-link="com.maulik.toastx/ToastConfig//#kotlin.String#kotlin.String?#kotlin.String?#com.maulik.toastx.ToastType#com.maulik.toastx.ToastStyle#kotlin.Boolean#kotlin.Boolean#kotlin.Int#kotlin.Boolean#com.maulik.toastx.ToastPosition?#kotlin.Boolean?#com.maulik.toastx.ToastEnterAnimation?#com.maulik.toastx.ToastAction?#com.maulik.toastx.ToastAppearance?#kotlin.Function1[com.maulik.toastx.ToastType,kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?/PointingToCallableParameters(1)/">title</span>, or alone if <span data-unresolved-link="com.maulik.toastx/ToastConfig//#kotlin.String#kotlin.String?#kotlin.String?#com.maulik.toastx.ToastType#com.maulik.toastx.ToastStyle#kotlin.Boolean#kotlin.Boolean#kotlin.Int#kotlin.Boolean#com.maulik.toastx.ToastPosition?#kotlin.Boolean?#com.maulik.toastx.ToastEnterAnimation?#com.maulik.toastx.ToastAction?#com.maulik.toastx.ToastAppearance?#kotlin.Function1[com.maulik.toastx.ToastType,kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?/PointingToCallableParameters(1)/">title</span> is null (at least one should be non-blank).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1367838622%2FProperties%2F1854401485" anchor-label="onDismiss" id="-1367838622%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-dismiss.html"><span>on</span><wbr></wbr><span><span>Dismiss</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1367838622%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="on-dismiss.html">onDismiss</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1021026541%2FProperties%2F1854401485" anchor-label="onToastClick" id="1021026541%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-toast-click.html"><span>on</span><wbr></wbr><span>Toast</span><wbr></wbr><span><span>Click</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1021026541%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="on-toast-click.html">onToastClick</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1930289860%2FProperties%2F1854401485" anchor-label="position" id="1930289860%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="position.html"><span><span>position</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1930289860%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="position.html">position</a><span class="token operator">: </span><a href="../-toast-position/index.html">ToastPosition</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Overrides ToastHost alignment for this toast only.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-166570734%2FProperties%2F1854401485" anchor-label="showClose" id="-166570734%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-close.html"><span>show</span><wbr></wbr><span><span>Close</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-166570734%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="show-close.html">showClose</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1405094775%2FProperties%2F1854401485" anchor-label="showIcon" id="1405094775%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-icon.html"><span>show</span><wbr></wbr><span><span>Icon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1405094775%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="show-icon.html">showIcon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-158027492%2FProperties%2F1854401485" anchor-label="style" id="-158027492%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="style.html"><span><span>style</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-158027492%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="style.html">style</a><span class="token operator">: </span><a href="../-toast-style/index.html">ToastStyle</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2092787285%2FProperties%2F1854401485" anchor-label="title" id="2092787285%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="title.html"><span><span>title</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2092787285%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="title.html">title</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Optional headline. Use with <span data-unresolved-link="com.maulik.toastx/ToastConfig//#kotlin.String#kotlin.String?#kotlin.String?#com.maulik.toastx.ToastType#com.maulik.toastx.ToastStyle#kotlin.Boolean#kotlin.Boolean#kotlin.Int#kotlin.Boolean#com.maulik.toastx.ToastPosition?#kotlin.Boolean?#com.maulik.toastx.ToastEnterAnimation?#com.maulik.toastx.ToastAction?#com.maulik.toastx.ToastAppearance?#kotlin.Function1[com.maulik.toastx.ToastType,kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?/PointingToCallableParameters(2)/">message</span>, or alone if <span data-unresolved-link="com.maulik.toastx/ToastConfig//#kotlin.String#kotlin.String?#kotlin.String?#com.maulik.toastx.ToastType#com.maulik.toastx.ToastStyle#kotlin.Boolean#kotlin.Boolean#kotlin.Int#kotlin.Boolean#com.maulik.toastx.ToastPosition?#kotlin.Boolean?#com.maulik.toastx.ToastEnterAnimation?#com.maulik.toastx.ToastAction?#com.maulik.toastx.ToastAppearance?#kotlin.Function1[com.maulik.toastx.ToastType,kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?/PointingToCallableParameters(2)/">message</span> is null (at least one should be non-blank).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="204454355%2FProperties%2F1854401485" anchor-label="type" id="204454355%2FProperties%2F1854401485" data-filterable-set=":toastxLib/commonMain"></a>
+          <div class="table-row table-row_content" data-filterable-current=":toastxLib/commonMain" data-filterable-set=":toastxLib/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="type.html"><span><span>type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="204454355%2FProperties%2F1854401485"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":toastxLib/commonMain"><div class="symbol monospace"><span class="token keyword">val </span><a href="type.html">type</a><span class="token operator">: </span><a href="../-toast-type/index.html">ToastType</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
