@@ -14,6 +14,30 @@
 
 **ToastX** is a Kotlin Multiplatform UI library for **Material 3–style toasts**: semantic types, multiple visual styles, swipe-to-dismiss, optional actions, theming, and smooth enter/exit motion. Show feedback in **one line** from shared `commonMain` code while a single **`ToastHost`** renders the overlay on each platform.
 
+## Multiplatform demo
+
+<p align="center">
+  <img src="docs/ToastX_Demo.png" alt="ToastX running on Web, Desktop, iOS Simulator, and Android Emulator with Gradient, Bottom sheet, and Animated border styles" width="920" />
+</p>
+
+<p align="center"><em>Same sample UI in the browser, on the desktop, and on iOS and Android — useful for regression checks and marketing assets.</em></p>
+
+## Toast style themes (`ToastStyle`)
+
+Each theme is a distinct layout family. Set `style = ToastStyle.…` on `ToastX.success` / `error` / `warning` / `info` / `show`, or inside `ToastConfig` for `ToastX.custom`.
+
+| Theme | `ToastStyle` constant | What you get |
+|--------|----------------------|--------------|
+| **Soft** | `ToastStyle.Soft` | Pale fill, circular icon, title + message, soft status card |
+| **Minimal** | `ToastStyle.Minimal` | Compact layout, light card, thin accent border |
+| **Outline** | `ToastStyle.Outline` | Strong outline, circular icon, two-line emphasis |
+| **Elevated** | `ToastStyle.Elevated` | White card, rounded square icon tile, colored shadow |
+| **Outer shadow** | `ToastStyle.OuterShadow` | White card with a stronger neutral ambient shadow |
+| **Bottom sheet** | `ToastStyle.BottomSheet` | Bottom-sheet look (rounded top corners; full width when used with a bottom stripe position) |
+| **Gradient** | `ToastStyle.Gradient` | Rich gradient background |
+| **Animated border** | `ToastStyle.AnimatedBorder` | Moving gradient border around the card |
+| **Glass** | `ToastStyle.Glass` | Frosted glass treatment; optional pill-style action |
+
 ## Toast types (4)
 
 Toasts are categorized by **`ToastType`**, which drives colors, icon treatment, and default timing:
@@ -27,13 +51,9 @@ Toasts are categorized by **`ToastType`**, which drives colors, icon treatment, 
 
 Convenience APIs: `ToastX.success`, `ToastX.error`, `ToastX.warning`, `ToastX.info`, plus `ToastX.show(..., type = …)` and `ToastX.custom(ToastConfig(…))` for full control (custom icons, actions, **`durationSec`** in whole seconds, position).
 
-## Visual styles (9+)
-
-**`ToastStyle`** selects the layout family (cards, outlines, gradients, glass, bottom-sheet strip, and more). The banner highlights **6+** curated styles; the library currently ships **nine** `ToastStyle` variants (for example **Soft**, **Minimal**, **Outline**, **Elevated**, **OuterShadow**, **BottomSheet**, **Gradient**, **AnimatedBorder**, **Glass**). Pass `style = ToastStyle.…` on any `ToastX` call or inside `ToastConfig`.
-
 ## Requirements
 
-- **Kotlin** and **Compose Multiplatform** aligned with this repo (see [`gradle/libs.versions.toml`](gradle/libs.versions.toml)).
+- **Kotlin** and **Compose Multiplatform** aligned with this repo — plugin and dependency versions are centralized in the [**Gradle version catalog**](https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog) at [`gradle/libs.versions.toml`](gradle/libs.versions.toml) (`libs.*` in module `build.gradle.kts` files).
 - **Android** `minSdk` **24** (library modules).
 - **Coroutines** (used by `ToastManager` for auto-dismiss).
 
@@ -178,7 +198,7 @@ Swipe-to-dismiss and safe-area padding are handled inside **`ToastHost`** (see [
 
 ## Sample app
 
-The **`composeApp`** module in this repository is a runnable **Compose Multiplatform** sample (login flow with **Lottie** icons in toasts). Use it as a reference for wiring **`ToastHost`**, **`ToastX.custom`**, and shared resources.
+The **`composeApp`** module is a runnable **Compose Multiplatform** sample: a **style preview gallery** (every `ToastStyle` with built-in vector icons) plus a small **sign-in** flow that fires real toasts. Use it as a reference for **`ToastHost`**, **`ToastRenderer`** / previews, **`ToastX.custom`**, and shared resources.
 
 ## Developing this repository
 
