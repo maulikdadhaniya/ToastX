@@ -1,125 +1,43 @@
 <p align="center">
-  <img src="docs/readme-banner.png" alt="ToastX — Beautiful, customizable toast notifications for Compose Multiplatform" width="920" />
+  <img
+    src="docs/readme-banner.png"
+    alt="ToastX — Compose Multiplatform toast library: styles, Success Error Warning Info, and platform icons"
+    width="920"
+  />
 </p>
 
-<p align="center">
-  <strong>Beautiful, customizable toast notifications for every platform.</strong>
-</p>
-
-<p align="center">
-  Compose Multiplatform · Android · iOS · Desktop (JVM) · Web (JS &amp; Wasm)
-</p>
+<p align="center"><strong>Toast notifications for Compose Multiplatform</strong> · Android · iOS · Desktop · Web (JS &amp; Wasm)</p>
 
 ---
 
-**ToastX** is a Kotlin Multiplatform UI library for **Material 3–style toasts**: semantic types, multiple visual styles, swipe-to-dismiss, optional actions, theming, and smooth enter/exit motion. Show feedback in **one line** from shared `commonMain` code while a single **`ToastHost`** renders the overlay on each platform.
-
-## Multiplatform demo
+**ToastX** shows Material-style toasts from shared Kotlin code. You add **one** `ToastHost` at the root, then call **`ToastX`** from anywhere under it.
 
 <p align="center">
-  <img src="docs/ToastX_Demo.png" alt="ToastX running on Web, Desktop, iOS Simulator, and Android Emulator with Gradient, Bottom sheet, and Animated border styles" width="920" style="display:block; border-radius:0; box-shadow:none; margin:0 auto;"/>
+  <img src="docs/ToastX_Demo.png" alt="ToastX demo" width="800" />
 </p>
 
-<p align="center"><em>Same sample UI in the browser, on the desktop, and on iOS and Android — useful for regression checks and marketing assets.</em></p>
+## What you need
 
-## Toast style themes (`ToastStyle`)
+- A **Kotlin Multiplatform** module with **Compose Multiplatform** (and the **Compose compiler** plugin for your Kotlin version).
+- **`mavenCentral()`** in Gradle repositories.
+- **Android `minSdk` 24** if you ship Android.
+- **Coroutines** (ToastX uses them for auto-dismiss).
 
-Each theme is a distinct layout family. Set `style = ToastStyle.…` on `ToastX.success` / `error` / `warning` / `info` / `show`, or inside `ToastConfig` for `ToastX.custom`.
+## Add the library
 
-| Theme | `ToastStyle` constant | What you get |
-|--------|----------------------|--------------|
-| **Soft** | `ToastStyle.Soft` | Pale fill, circular icon, title + message, soft status card |
-| **Minimal** | `ToastStyle.Minimal` | Compact layout, light card, thin accent border |
-| **Outline** | `ToastStyle.Outline` | Strong outline, circular icon, two-line emphasis |
-| **Elevated** | `ToastStyle.Elevated` | White card, rounded square icon tile, colored shadow |
-| **Outer shadow** | `ToastStyle.OuterShadow` | White card with a stronger neutral ambient shadow |
-| **Bottom sheet** | `ToastStyle.BottomSheet` | Bottom-sheet look (rounded top corners; full width when used with a bottom stripe position) |
-| **Gradient** | `ToastStyle.Gradient` | Rich gradient background |
-| **Animated border** | `ToastStyle.AnimatedBorder` | Moving gradient border around the card |
-| **Glass** | `ToastStyle.Glass` | Frosted glass treatment; optional pill-style action |
+**Maven:** `io.github.maulikdadhaniya:toastx:1.0.2` — see [Releases](https://github.com/maulikdadhaniya/ToastX/releases) for newer versions.
 
-## Toast types (4)
-
-Toasts are categorized by **`ToastType`**, which drives colors, icon treatment, and default timing:
-
-| Type | Typical use |
-|------|-------------|
-| **`Success`** | Completed actions, saved state, positive confirmation |
-| **`Error`** | Failures, validation errors, blocked operations |
-| **`Warning`** | Risky actions, deprecations, recoverable issues |
-| **`Info`** | Neutral tips, background status, non-blocking notices |
-
-Convenience APIs: `ToastX.success`, `ToastX.error`, `ToastX.warning`, `ToastX.info`, plus `ToastX.show(..., type = …)` and `ToastX.custom(ToastConfig(…))` for full control (custom icons, actions, **`durationSec`** in whole seconds, position).
-
-## Requirements
-
-- **Kotlin** and **Compose Multiplatform** aligned with this repo — plugin and dependency versions are centralized in the [**Gradle version catalog**](https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog) at [`gradle/libs.versions.toml`](gradle/libs.versions.toml) (`libs.*` in module `build.gradle.kts` files).
-- **Android** `minSdk` **24** (library modules).
-- **Coroutines** (used by `ToastManager` for auto-dismiss).
-
-## Install
-
-ToastX is published to **Maven Central** as a single Kotlin Multiplatform artifact.
-
-| |                                                                                                            |
-|--|------------------------------------------------------------------------------------------------------------|
-| **Group** | `io.github.maulikdadhaniya`                                                                                |
-| **Artifact** | `toastx`                                                                                                   |
-| **Version** | `1.0.2` (see [Releases](https://github.com/maulikdadhaniya/ToastX/releases) or Central for newer versions) |
-
-Maven coordinate string: **`io.github.maulikdadhaniya:toastx:1.0.2`**
-
-Ensure **`mavenCentral()`** is in your `dependencyResolutionManagement` / `repositories` block.
-
-### Gradle (Kotlin Multiplatform)
-
-**`build.gradle.kts`**
+In your shared **`build.gradle.kts`**, inside `kotlin { sourceSets { commonMain.dependencies { … } } }`:
 
 ```kotlin
-kotlin {
-    sourceSets {
-        commonMain.dependencies {
-            implementation("io.github.maulikdadhaniya:toastx:1.0.2")
-        }
-    }
-}
+implementation("io.github.maulikdadhaniya:toastx:1.0.2")
 ```
 
-One dependency includes **`ToastX`**, **`ToastHost`**, **`ToastConfig`**, and all UI internals.
+You also need Compose **runtime**, **foundation**, **material3**, and **ui** on `commonMain` (same as any Compose Multiplatform UI).
 
-### Match Compose compiler and Material 3
+## Configure: host + show
 
-Use a **Compose Multiplatform** and **Compose compiler** setup compatible with your Kotlin version (same idea as this repo’s [`composeApp/build.gradle.kts`](composeApp/build.gradle.kts) and [`gradle/libs.versions.toml`](gradle/libs.versions.toml)).
-
-### From source (optional)
-
-To depend on a **local checkout** instead of Central, include the library module (**`:toastxLib`**, folder `toastx-core/`):
-
-**`settings.gradle.kts`**
-
-```kotlin
-include(":app")
-include(":toastxLib")
-project(":toastxLib").projectDir = file("../ToastX/toastx-core")
-```
-
-**`build.gradle.kts`**
-
-```kotlin
-kotlin {
-    sourceSets {
-        commonMain.dependencies {
-            implementation(project(":toastxLib"))
-        }
-    }
-}
-```
-
-## Usage
-
-### Host (required once)
-
-Wrap your root UI so overlays and theme tokens resolve correctly. **`ToastHost`** subscribes to **`ToastManager`** and animates the current toast.
+**1. Wrap your app once** with `ToastHost` (theme + position + overlay). Put your real UI inside the trailing lambda.
 
 ```kotlin
 import androidx.compose.material3.MaterialTheme
@@ -131,7 +49,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.maulik.toastx.ToastPosition
-import com.maulik.toastx.ToastStyle
 import com.maulik.toastx.ToastX
 import com.maulik.toastx.theme.ToastThemeDefaults
 import com.maulik.toastx.ui.ToastHost
@@ -145,91 +62,37 @@ fun App() {
         lightTheme = ToastThemeDefaults.light,
         darkTheme = ToastThemeDefaults.dark,
         useDarkTheme = dark,
-        position = ToastPosition.TopCenter,
+        position = ToastPosition.BottomCenter,
     ) {
         MaterialTheme(colorScheme = colors) {
-            // Your screens — buttons, forms, ViewModels, etc.
-            // ToastX.success(message = "Saved")
+            // Your screens — call ToastX from here or from child composables
         }
     }
 }
 ```
 
-### Show toasts
-
-From any composable or callback **after** the host is in the tree:
+**2. Show a toast** after the host exists (from any composable under `ToastHost`):
 
 ```kotlin
-import com.maulik.toastx.ToastType
-
-ToastX.success(message = "Profile updated", title = "Success")
-ToastX.error(message = "Could not connect", title = "Error")
-ToastX.warning(message = "Session ends in 5 minutes", title = "Warning")
-ToastX.info(message = "Tip: swipe the toast to dismiss", title = "Info")
-
-ToastX.show(
-    title = "Headline",
-    message = "Body text",
-    type = ToastType.Info,
-    style = ToastStyle.Glass,
-    position = ToastPosition.BottomCenter,
-    showClose = true,
-    durationSec = 4,
-)
+ToastX.success(title = "Done", message = "Saved.")
+ToastX.error(title = "Error", message = "Something went wrong.")
+ToastX.warning(title = "Heads up", message = "Check this.")
+ToastX.info(title = "Info", message = "Details here.")
 ```
 
-Custom layout (icons, actions, `onDismiss`):
+**3. More control** (style, duration in seconds, button, custom icon): use **`ToastX.custom(ToastConfig(…))`**. Set **`style = ToastStyle.…`**, **`durationSec`**, **`action`**, and optionally **`iconContent`** (a `@Composable (ToastType) -> Unit` for the left slot — or leave it `null` for the built-in icon).
 
-```kotlin
-ToastX.custom(
-    ToastConfig(
-        title = "Backup complete",
-        message = "Your data is safe.",
-        type = ToastType.Success,
-        style = ToastStyle.Elevated,
-        showClose = true,
-        action = ToastAction(label = "Undo") { /* … */ },
-        onDismiss = { /* … */ },
-    ),
-)
-```
+## Types and looks (short)
 
-Swipe-to-dismiss and safe-area padding are handled inside **`ToastHost`** (see [`ToastRenderer`](toastx-core/src/commonMain/kotlin/com/maulik/toastx/ui/ToastRenderer.kt)).
+- **`ToastType`**: `Success`, `Error`, `Warning`, `Info` — drives color and default icon.
+- **`ToastStyle`**: `Soft`, `Minimal`, `Outline`, `Elevated`, `OuterShadow`, `BottomSheet`, `Gradient`, `AnimatedBorder`, `Glass` — changes the card layout.
 
-## Sample app
+API reference: run `./gradlew :toastxLib:dokkaGenerate`, then open `toastx-core/build/dokka/html/index.html` in a browser.
 
-The **`composeApp`** module is a runnable **Compose Multiplatform** sample: a **style preview gallery** (every `ToastStyle` with built-in vector icons) plus a small **sign-in** flow that fires real toasts. Use it as a reference for **`ToastHost`**, **`ToastRenderer`** / previews, **`ToastX.custom`**, and shared resources.
+## Sample in this repo
 
-## Developing this repository
-
-### Android
-
-```shell
-./gradlew :composeApp:assembleDebug
-```
-
-### Desktop (JVM)
-
-```shell
-./gradlew :composeApp:run
-```
-
-### Web (Wasm, modern browsers)
-
-```shell
-./gradlew :composeApp:wasmJsBrowserDevelopmentRun
-```
-
-### Web (JS)
-
-```shell
-./gradlew :composeApp:jsBrowserDevelopmentRun
-```
-
-### iOS
-
-Open [`iosApp`](iosApp) in Xcode or use the IDE run configuration for the iOS target.
+The **`composeApp`** module is a small runnable app (style previews + sign-in) you can copy from.
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html), [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform), and [Kotlin/Wasm](https://kotl.in/wasm/).
+[Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html) · [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform)

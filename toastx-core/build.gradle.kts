@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.dokka)
 }
 
 kotlin {
@@ -69,5 +70,13 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+}
+
+dokka {
+    dokkaPublications.html {
+        moduleName.set("toastx")
+        outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
+        failOnWarning.set(false)
     }
 }
