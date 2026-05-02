@@ -17,7 +17,7 @@
 ## Multiplatform demo
 
 <p align="center">
-  <img src="docs/ToastX_Demo.png" alt="ToastX running on Web, Desktop, iOS Simulator, and Android Emulator with Gradient, Bottom sheet, and Animated border styles" width="920" />
+  <img src="docs/ToastX_Demo.png" alt="ToastX running on Web, Desktop, iOS Simulator, and Android Emulator with Gradient, Bottom sheet, and Animated border styles" width="920" style="display:block; border-radius:0; box-shadow:none; margin:0 auto;"/>
 </p>
 
 <p align="center"><em>Same sample UI in the browser, on the desktop, and on iOS and Android — useful for regression checks and marketing assets.</em></p>
