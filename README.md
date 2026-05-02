@@ -209,3 +209,7 @@ The **`composeApp`** module is a small runnable app (style previews + sign-in) y
 ---
 
 [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html) · [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform)
+
+---
+
+Made by **Maulik Dadhaniya**
