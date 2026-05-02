@@ -202,7 +202,7 @@ Set **`style = ToastStyle.…`** on **`ToastX.show`** or in **`ToastConfig`**.
 
 Full KDoc for every class and parameter:
 
-**[https://maulikdadhaniya.github.io/ToastX/api/](https://maulikdadhaniya.github.io/ToastX/api/)**
+**[https://maulikdadhaniya.github.io/ToastX](https://maulikdadhaniya.github.io/ToastX)**
 
 That URL works after you turn on **GitHub Pages** for this repo (**Settings → Pages → Build from branch `main` → folder `/docs`**). The HTML is generated into **`docs/api/`** by:
 
