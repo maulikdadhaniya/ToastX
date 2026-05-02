@@ -212,4 +212,4 @@ The **`composeApp`** module is a small runnable app (style previews + sign-in) y
 
 ---
 
-Made by **Maulik Dadhaniya**
+❤️ Made by **Maulik Dadhaniya**
