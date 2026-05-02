@@ -200,17 +200,7 @@ Set **`style = ToastStyle.…`** on **`ToastX.show`** or in **`ToastConfig`**.
 
 ### API reference (Dokka)
 
-Full KDoc for every class and parameter:
-
 **[https://maulikdadhaniya.github.io/ToastX](https://maulikdadhaniya.github.io/ToastX)**
-
-That URL works after you turn on **GitHub Pages** for this repo (**Settings → Pages → Build from branch `main` → folder `/docs`**). The HTML is generated into **`docs/api/`** by:
-
-```shell
-./gradlew :toastxLib:dokkaGenerate
-```
-
-Then commit and push **`docs/api`** so the site updates. Until Pages is enabled, open **`docs/api/index.html`** locally in a browser after running the command above.
 
 ## Sample in this repo
 
